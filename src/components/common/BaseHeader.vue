@@ -48,6 +48,24 @@
       },
       moduleTypes() {
         return this.$store.state.moduleTypes;
+      },
+      onInputBlur() {
+        this.isFocusOnInput = false;
+      },
+      onInputFocus() {
+        this.isFocusOnInput = true;
+      }
+    },
+    watch: {
+      keyword(newValue, oldValue) {
+        console.log(`newValue:${newValue}; oldValue:${oldValue}`);
+      }
+    },
+    
+    data() {
+      return {
+        keyword: "",
+        isFocusOnInput: false
       }
     }
   }
@@ -57,7 +75,6 @@
   .outer-content {
     width: 100%;
     min-height: 936px;
-    margin-top: 40px;
     transition: background .5s ease-in;
   }
   
@@ -172,7 +189,6 @@
     width: 0;
     height: 0;
     margin-top: -10px;
-    margin-left: calc(50% - 10px);
     border-left: 10px solid transparent;
     border-right: 10px solid transparent;
     border-bottom: 10px solid white;
@@ -183,6 +199,7 @@
     padding: 10px;
     text-align: center;
     color: #000;
+    text-decoration: none;
   }
   
   .more-module-link:hover {

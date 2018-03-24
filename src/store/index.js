@@ -7,30 +7,6 @@ import music from './module/music'
 
 Vue.use(Vuex);
 
-export default new Vuex({
-  state,
-  mutations,
-  actions,
-  module
-});
-
-const state = {
-  moduleTypes,
-  currentModuleType: moduleTypes[0],
-  searchData: []
-};
-
-const mutations = {};
-
-const actions = {};
-
-const module = {
-  book,
-  movie,
-  city,
-  music
-};
-
 const moduleTypes = [
   {
     value: 'book',
@@ -90,3 +66,27 @@ const moduleTypes = [
     }]
   }
 ];
+
+const state = {
+  moduleTypes,
+  currentModuleType: moduleTypes[0],
+  searchData: []
+};
+
+const mutations = {};
+
+const actions = {};
+
+const module = {
+  book,
+  movie,
+  city,
+  music
+};
+
+export default new Vuex.Store({
+  state,
+  mutations,
+  actions,
+  module
+});
